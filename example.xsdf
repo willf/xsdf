@@ -1,0 +1,16 @@
+
+
+(setf (logical-pathname-translations "Home")
+  `(("**;*.*.*" ,(make-pathname 
+		  :directory (append (butlast (pathname-directory *load-truename*))
+				    (list :wild-inferiors))
+		  :name :wild
+		  :type :wild))))
+
+(defparameter *asystem*
+	    '("Home:test;src;one.lisp"
+	      "Home:test;src;two.lisp"
+	      "Home:test;src;three.lisp"
+	      "Home:test;src;lower;four.lisp"
+	      ))
+ 
