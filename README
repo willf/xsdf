@@ -1,0 +1,33 @@
+;;;-*- Mode: Lisp; Package: xsdf -*-
+;;;
+
+;;; The extremely simple defsystem facility.
+;;;
+;;; 
+
+(defpackage :xsdf
+  (:use :common-lisp)
+  (:export
+   #:load-file
+   #:load-system
+   #:compile-system
+   #:check-system
+   #:clean-system
+   ))
+
+(in-package :xsdf)
+
+;;;
+;;;(setf (logical-pathname-translations "Home")
+;;;  `(("**;*.*.*" ,(make-pathname 
+;;;		  :directory (append (butlast (pathname-directory *load-truename*))
+;;;				    (list :wild-inferiors))
+;;;		  :name :wild
+;;;		  :type :wild))))
+;;;
+;;;(defparameter *asystem*
+;;;	    '("Home:test;one.lisp"
+;;;	      "Home:test;two.lisp"
+;;;	      "Home:test;three.lisp"
+;;;	      )))
+;;; 
